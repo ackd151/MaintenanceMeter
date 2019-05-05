@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ackd151.maintenancemeter.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/home_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@color/midnightBlue"
+        android:gravity="center"
+        android:text="@string/machine_profiles"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/profile1ImgView"
+        android:layout_width="80dp"
+        android:layout_height="72dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/profile2ImgView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/profile1Button"
+        app:layout_constraintTop_toBottomOf="@+id/home_title" />
+
+    <Button
+        android:id="@+id/profile1Button"
+        android:layout_width="192dp"
+        android:layout_height="72dp"
+        android:background="@android:color/background_light"
+        android:text="Profile 1"
+        app:layout_constraintBottom_toTopOf="@+id/profile2Button"
+        app:layout_constraintLeft_toRightOf="@+id/profile1ImgView"
+        app:layout_constraintRight_toLeftOf="@+id/profile1ModButton"
+        app:layout_constraintTop_toBottomOf="@+id/home_title" />
+
+    <Button
+        android:id="@+id/profile1ModButton"
+        android:layout_width="88dp"
+        android:layout_height="72dp"
+        android:background="@color/ledGreen"
+        android:text="@string/add_profile"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/profile1Button"
+        app:layout_constraintLeft_toRightOf="@+id/profile1Button"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/profile2ImgView"
+        android:layout_width="80dp"
+        android:layout_height="72dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/profile3ImgView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/profile2Button"
+        app:layout_constraintTop_toBottomOf="@+id/profile1ImgView" />
+
+    <Button
+        android:id="@+id/profile2Button"
+        android:layout_width="192dp"
+        android:layout_height="72dp"
+        android:background="@android:color/background_light"
+        android:text="Profile 2"
+        app:layout_constraintBottom_toTopOf="@+id/profile3Button"
+        app:layout_constraintLeft_toRightOf="@+id/profile2ImgView"
+        app:layout_constraintRight_toLeftOf="@+id/profile2ModButton"
+        app:layout_constraintTop_toBottomOf="@+id/profile1Button" />
+
+    <Button
+        android:id="@+id/profile2ModButton"
+        android:layout_width="88dp"
+        android:layout_height="72dp"
+        android:background="@color/ledGreen"
+        android:text="@string/add_profile"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/profile2Button"
+        app:layout_constraintLeft_toRightOf="@+id/profile2Button"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/profile3ImgView"
+        android:layout_width="80dp"
+        android:layout_height="72dp"
+        android:background="@android:color/background_light"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/profile3Button"
+        app:layout_constraintTop_toBottomOf="@+id/profile2ImgView" />
+
+    <Button
+        android:id="@+id/profile3Button"
+        android:layout_width="192dp"
+        android:layout_height="72dp"
+        android:background="@android:color/background_light"
+        android:text="Profile 3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/profile3ImgView"
+        app:layout_constraintRight_toLeftOf="@+id/profile3ModButton"
+        app:layout_constraintTop_toBottomOf="@+id/profile2Button" />
+
+    <Button
+        android:id="@+id/profile3ModButton"
+        android:layout_width="88dp"
+        android:layout_height="72dp"
+        android:background="@color/ledGreen"
+        android:text="@string/add_profile"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/profile3Button"
+        app:layout_constraintLeft_toRightOf="@+id/profile3Button"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

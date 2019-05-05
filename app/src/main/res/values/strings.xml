@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">Moto-Meter</string>
+    <string name="save_primary">save_primary</string>
+    <string name="machine_profiles">Select Profile</string>
+    <string name="add_profile">Add</string>
+    <string name="delete_profile">Delete</string>
+    <string name="profile_button">Machine</string>
+    <string name="new_machine">New Profile</string>
+    <string name="manuf_year_hint">YYYY</string>
+    <string name="manuf_year">Year</string>
+    <string name="make">Make</string>
+    <string name="current_hours">Current Hours</string>
+    <string name="current_hours_hint">ex: 12.3</string>
+    <string name="model">Model</string>
+    <string name="model_hint">Model</string>
+    <string name="create_machine_profile">Submit</string>
+    <string name="intialize_intervals">Maintenance Intervals</string>
+    <string name="engine_oil">Engine oil at:</string>
+    <string name="oil_filter">Oil filter every:</string>
+    <string name="oil_filter_task">Oil Filter</string>
+    <string name="fork_oil">Fork oil at:</string>
+    <string name="fork_oil_task">Fork Oil</string>
+    <string name="shock_oil">Shock oil at:</string>
+    <string name="shock_oil_task">Shock Oil</string>
+    <string name="valves">Valve clearance at:</string>
+    <string name="valve_task">Valve Clearance</string>
+    <string name="top_end">Top-end at:</string>
+    <string name="top_end_task">Top-End</string>
+    <string name="hrs">hrs</string>
+    <string name="chgs">chg(s)</string>
+    <string name="maint_home_title">Overview</string>
+    <string name="eng_oil_task">Engine oil</string>
+    <string name="default_hrs">0.0</string>
+    <string name="default_digit">0</string>
+    <string name="task_label">Task</string>
+    <string name="hrs_left_label">Due in</string>
+    <string name="inspect_task_label">Inspect</string>
+    <string name="post_ride">Enter ride duration</string>
+    <string name="or">-OR-</string>
+    <string name="hour_meter_reading">...the new hour meter reading</string>
+    <string name="hour_meter">Hour-meter:</string>
+    <string name="update">Update</string>
+    <string-array name="empty_spinner">
+        <item>---------</item>
+    </string-array>
+    <string-array name="manufactured_year">
+        <item>---------</item>
+        <item>2019</item>
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+        <item>2013</item>
+        <item>2012</item>
+        <item>2011</item>
+        <item>2010</item>
+        <item>2009</item>
+        <item>2008</item>
+        <item>2007</item>
+        <item>2006</item>
+    </string-array>
+    <string-array name="manufacturer_list">
+        <item>---------</item>
+        <item>Honda</item>
+        <item>Husqvarna</item>
+        <item>Kawasaki</item>
+        <item>KTM</item>
+        <item>Suzuki</item>
+        <item>Yamaha</item>
+    </string-array>
+    <string-array name="honda_models">
+        <item>---------</item>
+        <item>CRF 150R</item>
+        <item>CRF 250R</item>
+        <item>CRF 450R</item>
+    </string-array>
+    <string-array name="husqvarna_models">
+        <item>---------</item>
+        <item>FC 250</item>
+        <item>FC 350</item>
+        <item>FC 450</item>
+    </string-array>
+    <string-array name="kawasaki_models">
+        <item>---------</item>
+        <item>KX 250F</item>
+        <item>KX 450F</item>
+    </string-array>
+    <string-array name="ktm_models">
+        <item>---------</item>
+        <item>250 SX-F</item>
+        <item>350 SX-F</item>
+        <item>450 SX-F</item>
+    </string-array>
+    <string-array name="suzuki_models">
+        <item>---------</item>
+        <item>RM-Z 250</item>
+        <item>RM-Z 450</item>
+    </string-array>
+    <string-array name="yamaha_models">
+        <item>---------</item>
+        <item>YZ 250F</item>
+        <item>YZ 450F</item>
+    </string-array>
+
+    <!-- PreRide Activity Strings -->
+    <string name="inspections">Inspections/Tasks</string>
+    <string name="complete">Complete</string>
+    <string name="air_filter">Air Filter</string>
+    <string name="spokes">Spoke Torque</string>
+    <string name="chain">Chain Tension</string>
+    <string name="throttle_cable">Throttle Cable</string>
+    <string name="brakes">Brakes</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5a5a5e</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#ff0000</color>
+
+    <color name="midnightBlue">#00009c</color>
+    <color name="checkBox">#49e20e</color>
+    <color name="ledGreen">#5dfc0a</color>
+    <color name="suzukiYellow">#fce903</color>
+    <color name="neonYellow">#f3f315</color>
+    <color name="fluoroscentYellow">#ccff00</color>
+</resources>

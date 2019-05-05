@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ackd151.maintenancemeter.MaintenanceHome">
+
+    <TextView
+        android:id="@+id/yearTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="year"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintRight_toLeftOf="@+id/makeTV"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/bikeIV"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/makeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="make"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBaseline_toBaselineOf="@+id/yearTV"
+        app:layout_constraintRight_toLeftOf="@+id/modelTV"
+        app:layout_constraintLeft_toRightOf="@+id/yearTV"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/modelTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="model"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBaseline_toBaselineOf="@+id/makeTV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/makeTV" />
+
+    <ImageView
+        android:id="@+id/bikeIV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="h,16:9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/placeholder" />
+
+    <TextView
+        android:id="@+id/hrsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hrs."
+        app:layout_constraintBaseline_toBaselineOf="@+id/floatHrsTV"
+        app:layout_constraintLeft_toRightOf="@+id/floatHrsTV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/floatHrsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="----"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/hrsTV"
+        app:layout_constraintTop_toBottomOf="@+id/makeTV"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintHorizontal_chainStyle="packed" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_col_1"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="180dp" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_col_2"
+        app:layout_constraintGuide_percent="0.8"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="288dp" />
+
+    <TextView
+        android:id="@+id/overview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/midnightBlue"
+        android:gravity="center"
+        android:text="@string/maint_home_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/floatHrsTV" />
+
+    <TextView
+        android:id="@+id/task_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/task_label"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_col_1"
+        app:layout_constraintTop_toBottomOf="@+id/overview" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/inspect_task_label"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_col_2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintBaseline_toBaselineOf="@+id/task_TV" />
+
+    <TextView
+        android:id="@+id/eng_oil_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/eng_oil_task"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_col_1"
+        app:layout_constraintTop_toBottomOf="@+id/task_TV"
+        app:layout_constraintHorizontal_bias="0.495" />
+
+    <TextView
+        android:id="@+id/oil_filter_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/oil_filter_task"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_col_1"
+        app:layout_constraintTop_toBottomOf="@+id/eng_oil_task" />
+
+    <TextView
+        android:id="@+id/fork_oil_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/fork_oil_task"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_col_1"
+        app:layout_constraintTop_toBottomOf="@+id/oil_filter_task"
+        app:layout_constraintHorizontal_bias="0.503" />
+
+    <TextView
+        android:id="@+id/shock_oil_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/shock_oil_task"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_col_1"
+        app:layout_constraintTop_toBottomOf="@+id/fork_oil_task" />
+
+    <TextView
+        android:id="@+id/valve_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/valve_task"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_col_1"
+        app:layout_constraintTop_toBottomOf="@+id/shock_oil_task" />
+
+    <TextView
+        android:id="@+id/top_end_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/top_end_task"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_col_1"
+        app:layout_constraintTop_toBottomOf="@+id/valve_task" />
+
+    <Button
+        android:id="@+id/eng_oil_inspect_button"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inspect_task_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/eng_oil_task"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_col_2" />
+
+    <Button
+        android:id="@+id/oil_filter_inspect_button"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inspect_task_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/oil_filter_task"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_col_2" />
+
+    <Button
+        android:id="@+id/fork_oil_inspect_button"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inspect_task_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/fork_oil_task"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_col_2" />
+
+    <Button
+        android:id="@+id/shock_oil_inspect"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inspect_task_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/shock_oil_task"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_col_2" />
+
+    <Button
+        android:id="@+id/valve_inspect"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inspect_task_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/valve_task"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_col_2" />
+
+    <Button
+        android:id="@+id/top_end_inspect"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inspect_task_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBaseline_toBaselineOf="@+id/top_end_task"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_col_2" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/due_in_tab"
+        android:layout_width="107dp"
+        android:layout_height="300dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_col_1"
+        app:layout_constraintRight_toLeftOf="@+id/guideline_col_2"
+        app:layout_constraintTop_toBottomOf="@+id/overview"
+        app:layout_constraintHorizontal_bias="0.0">
+
+        <TextView
+            android:id="@+id/hrs_left_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/hrs_left_label"
+            app:layout_constraintHorizontal_bias="0.455"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/eng_oil_hrs_left_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/default_hrs"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/eng_oil_unit"
+            app:layout_constraintTop_toBottomOf="@+id/hrs_left_TV" />
+
+        <TextView
+            android:id="@+id/eng_oil_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/hrs"
+            app:layout_constraintBaseline_toBaselineOf="@+id/eng_oil_hrs_left_float"
+            app:layout_constraintLeft_toRightOf="@+id/eng_oil_hrs_left_float"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/filter_chgs_left_int"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/default_digit"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/oil_filter_unit"
+            app:layout_constraintTop_toBottomOf="@+id/eng_oil_hrs_left_float" />
+
+        <TextView
+            android:id="@+id/oil_filter_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/chgs"
+            app:layout_constraintBaseline_toBaselineOf="@+id/filter_chgs_left_int"
+            app:layout_constraintLeft_toRightOf="@+id/filter_chgs_left_int"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:id="@+id/fork_oil_hrs_left_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/default_hrs"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/fork_oil_unit"
+            app:layout_constraintTop_toBottomOf="@+id/filter_chgs_left_int" />
+
+        <TextView
+            android:id="@+id/fork_oil_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/hrs"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fork_oil_hrs_left_float"
+            app:layout_constraintLeft_toRightOf="@+id/fork_oil_hrs_left_float"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/shock_oil_hrs_left_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/default_hrs"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/shock_oil_unit"
+            app:layout_constraintTop_toBottomOf="@+id/fork_oil_hrs_left_float" />
+
+        <TextView
+            android:id="@+id/shock_oil_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/hrs"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shock_oil_hrs_left_float"
+            app:layout_constraintLeft_toRightOf="@+id/shock_oil_hrs_left_float"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/valves_hrs_left_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/default_hrs"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/valve_unit"
+            app:layout_constraintTop_toBottomOf="@+id/shock_oil_hrs_left_float" />
+
+        <TextView
+            android:id="@+id/valve_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/hrs"
+            app:layout_constraintBaseline_toBaselineOf="@+id/valves_hrs_left_float"
+            app:layout_constraintLeft_toRightOf="@+id/valves_hrs_left_float"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/top_end_hrs_left_float"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/default_hrs"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/top_end_unit"
+            app:layout_constraintTop_toBottomOf="@+id/valves_hrs_left_float" />
+
+        <TextView
+            android:id="@+id/top_end_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/hrs"
+            app:layout_constraintBaseline_toBaselineOf="@+id/top_end_hrs_left_float"
+            app:layout_constraintLeft_toRightOf="@+id/top_end_hrs_left_float"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
