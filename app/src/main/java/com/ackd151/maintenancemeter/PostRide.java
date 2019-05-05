@@ -1,6 +1,9 @@
 package com.ackd151.maintenancemeter;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,7 +25,6 @@ public class PostRide extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_ride);
-
         profile = getIntent().getExtras().getParcelable("active_profile");
         screenBuilder();
     }
@@ -34,15 +36,17 @@ public class PostRide extends AppCompatActivity {
     }
 
     public void updateCurrHours(View view)   {
-        EditText rideDuration = (EditText)findViewById(R.id.durationFloat);
+        EditText rideDuration = findViewById(R.id.durationFloat);
         profile.setCurrentHours(profile.getCurrentHours() +
                 Float.valueOf(rideDuration.getText().toString()));
-        screenBuilder();
+        Intent returnProfile = new Intent();
+        returnProfile.putExtra("returningProfile", (Parcelable)profile);
+        setResult(Activity.RESULT_OK, returnProfile);
         finish();
     }
 
     public void updateHourMeter(View view)  {
-        EditText hourMeter = (EditText)findViewById(R.id.hour_meter_float);
+        EditText hourMeter = findViewById(R.id.hour_meter_float);
         profile.setCurrentHours(Float.valueOf(hourMeter.getText().toString()));
         screenBuilder();
         finish();
