@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
     final static String PROFILES = "new_profile_list";
     final static String PRIMARY_PROFILE_IMAGE = "primary_profile_image";
 
-    ArrayList<Machine> profiles;
+    List<Machine> profiles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
         if (requestCode == 1)   {
             if (resultCode == RESULT_OK)    {
                 Bundle bundle = data.getExtras();
-                Machine newProfile = bundle.getParcelable("new_profile");
+                Machine newProfile = (Machine)bundle.getParcelable("new_profile");
                 profiles.add(newProfile);
                 PreferencesMgr.saveProfiles(profiles, this);
             }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
             String iconFileName = "placeholder.png";
             String resourceName = "profile" + (i+1) + "ImgView";
             int imageViewId = getResources().getIdentifier(resourceName, "id", getPackageName());
-            ImageView profile =  findViewById(imageViewId);
+            ImageView profile = (ImageView) findViewById(imageViewId);
             if (i < numProfiles)
                 iconFileName = profiles.get(i).getIconFilename();
             profile.setImageResource(getResources().getIdentifier(iconFileName, "drawable", getPackageName()));
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
             String profileName = (i < numProfiles ? profiles.get(i).getProfileName() : (profileX + (i+1)));
             resourceName = "profile" + (i+1) + "Button";
             int buttonId = getResources().getIdentifier(resourceName, "id", getPackageName());
-            Button profileButton =  findViewById(buttonId);
+            Button profileButton = (Button) findViewById(buttonId);
             profileButton.setText(profileName);
             if (i < numProfiles) {
                 final int index = i;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
             //set action button
             resourceName = "profile" + (i+1) + "ModButton";
             int actionButtonId = getResources().getIdentifier(resourceName, "id", getPackageName());
-            Button actionButton =  findViewById(actionButtonId);
+            Button actionButton = (Button) findViewById(actionButtonId);
             setButton(actionButton, (i < numProfiles ? "delete" : "add"));
         }
     }
@@ -125,10 +125,8 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
     }
 
     public void machineHome(View view, int profileIndex)  {
-        // pass along profiles and active list index
         Intent launchMachineHome = new Intent(this, MachineHome.class);
-        launchMachineHome.putParcelableArrayListExtra("profiles", profiles);
-        launchMachineHome.putExtra("profileIndex", profileIndex);
+        launchMachineHome.putExtra("profile", (Parcelable)profiles.get(profileIndex));
         startActivity(launchMachineHome);
     }
 

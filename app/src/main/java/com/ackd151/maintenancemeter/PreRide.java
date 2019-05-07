@@ -30,19 +30,19 @@ public class PreRide extends AppCompatActivity {
         model = profile.getModel();
         hours = profile.getCurrentHours();
 
-        TextView tYear = findViewById(R.id.yearTV);
+        TextView tYear = (TextView)findViewById(R.id.yearTV);
         tYear.setText(year);
-        TextView tMake = findViewById(R.id.makeTV);
+        TextView tMake = (TextView)findViewById(R.id.makeTV);
         tMake.setText(make);
-        TextView tModel = findViewById(R.id.modelTV);
+        TextView tModel = (TextView)findViewById(R.id.modelTV);
         tModel.setText(model);
 
         String bikeImgFilename = profile.getImgFilename();
-        ImageView bikeImage = findViewById(R.id.bikeIV);
+        ImageView bikeImage = (ImageView)findViewById(R.id.bikeIV);
         bikeImage.setImageResource(
                 getResources().getIdentifier(bikeImgFilename, "drawable", getPackageName()));
 
-        TextView currHours = findViewById(R.id.floatHrsTV);
+        TextView currHours = (TextView)findViewById(R.id.floatHrsTV);
         currHours.setText(String.valueOf(hours));
     }
 }
