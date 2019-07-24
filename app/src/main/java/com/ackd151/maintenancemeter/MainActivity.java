@@ -1,5 +1,6 @@
 package com.ackd151.maintenancemeter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -55,8 +56,17 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
         if (requestCode == 1)   {
             if (resultCode == RESULT_OK)    {
                 Bundle bundle = data.getExtras();
-                Machine newProfile = (Machine)bundle.getParcelable("new_profile");
+                Machine newProfile = bundle.getParcelable("new_profile");
                 profiles.add(newProfile);
+                PreferencesMgr.saveProfiles(profiles, this);
+            }
+        }
+
+        if (requestCode == 2) {
+            if (resultCode == Activity.RESULT_OK){
+                Machine profile = data.getParcelableExtra("returningProfile");
+                int profileIndex = data.getIntExtra("profileIndex", -1);
+                profiles.set(profileIndex, profile);
                 PreferencesMgr.saveProfiles(profiles, this);
             }
         }
@@ -127,7 +137,8 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
     public void machineHome(View view, int profileIndex)  {
         Intent launchMachineHome = new Intent(this, MachineHome.class);
         launchMachineHome.putExtra("profile", (Parcelable)profiles.get(profileIndex));
-        startActivity(launchMachineHome);
+        launchMachineHome.putExtra("profileIndex", profileIndex);
+        startActivityForResult(launchMachineHome, 2);
     }
 
     public void deleteProfile(View view) {
