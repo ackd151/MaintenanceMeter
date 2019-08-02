@@ -2,16 +2,11 @@ package com.ackd151.maintenancemeter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Parcelable;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import static com.ackd151.maintenancemeter.MainActivity.PRIMARY_PROFILE_IMAGE;
 
 public class MachineHome extends AppCompatActivity {
 
@@ -24,8 +19,10 @@ public class MachineHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_machine_home);
-        profile = getIntent().getExtras().getParcelable("profile");
+
+        // Get profileIndex from intent extras
         profileIndex = getIntent().getIntExtra("profileIndex", -1);
+
         screenBuilder();
     }
 
@@ -40,22 +37,26 @@ public class MachineHome extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if (requestCode == 1) {
-            if (resultCode == Activity.RESULT_OK){
-                profile = data.getParcelableExtra("returningProfile");
+            if(resultCode == Activity.RESULT_OK) {
+                screenBuilder();
             }
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent returnProfile = new Intent();
-        returnProfile.putExtra("returningProfile", (Parcelable)profile);
-        returnProfile.putExtra("profileIndex", profileIndex);
-        setResult(Activity.RESULT_OK, returnProfile);
-        finish();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        Intent returnProfile = new Intent();
+//        returnProfile.putExtra("returningProfile", (Parcelable)profile);
+//        returnProfile.putExtra("profileIndex", profileIndex);
+//        setResult(Activity.RESULT_OK, returnProfile);
+//        finish();
+//    }
 
     public void screenBuilder() {
+        // Retrieve current profile from preferences
+        profile = PreferencesMgr.getProfile(this, profileIndex);
+
+        // Set view data
         year = profile.getYear();
         make = profile.getMake();
         model = profile.getModel();
@@ -79,19 +80,22 @@ public class MachineHome extends AppCompatActivity {
 
     public void postRide(View view) {
         Intent postRideActivity = new Intent(this, PostRide.class);
-        postRideActivity.putExtra("active_profile", (Parcelable)profile);
+        postRideActivity.putExtra("profileIndex", profileIndex);
+
         startActivityForResult(postRideActivity, 1);
     }
 
     public void preRide(View view) {
         Intent preRideActivity = new Intent(this, PreRide.class);
-        preRideActivity.putExtra("active_profile", (Parcelable)profile);
+        preRideActivity.putExtra("profileIndex", profileIndex);
+
         startActivity(preRideActivity);
     }
 
     public void maintHome(View view) {
         Intent maintenanceActivity = new Intent(this, MaintenanceHome.class);
-        maintenanceActivity.putExtra("active_profile", (Parcelable)profile);
+        maintenanceActivity.putExtra("profileIndex", profileIndex);
+
         startActivity(maintenanceActivity);
     }
 }

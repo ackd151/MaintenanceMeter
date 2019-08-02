@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TopEndRebuild"></activity>
+        <activity android:name=".ValveClearanceCheck" />
+        <activity android:name=".ShockOilChange" />
+        <activity android:name=".ForkOilChange" />
+        <activity android:name=".OilChange" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +25,7 @@
         <activity android:name=".MachineHome" />
         <activity android:name=".MaintenanceHome" />
         <activity android:name=".PostRide" />
-        <activity android:name=".PreRide"></activity>
+        <activity android:name=".PreRide" />
     </application>
 
 </manifest>

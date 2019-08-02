@@ -34,12 +34,21 @@
     <string name="default_digit">0</string>
     <string name="task_label">Task</string>
     <string name="hrs_left_label">Due in</string>
-    <string name="inspect_task_label">Inspect</string>
+    <string name="inspect_task_label">Sign Off</string>
     <string name="post_ride">Enter ride duration</string>
     <string name="or">-OR-</string>
     <string name="hour_meter_reading">...the new hour meter reading</string>
     <string name="hour_meter">Hour-meter:</string>
     <string name="update">Update</string>
+    <string name="valve_clearance_title">Valve Clearance Check</string>
+    <string name="top_end_title">Top End Rebuild</string>
+    <string name="left_intake">Left Intake @</string>
+    <string name="right_intake">Right Intake @</string>
+    <string name="left_exhaust">Left Exhaust @</string>
+    <string name="right_exhaust">Right Exhaust @</string>
+    <string name="previous">last meas.</string>
+    <string name="blank">----</string>
+    <string name="go_to_button">Go To</string>
     <string-array name="empty_spinner">
         <item>---------</item>
     </string-array>
@@ -104,11 +113,17 @@
     </string-array>
 
     <!-- PreRide Activity Strings -->
-    <string name="inspections">Inspections/Tasks</string>
+    <string name="inspections">Pre-ride Checklist</string>
     <string name="complete">Complete</string>
     <string name="air_filter">Air Filter</string>
     <string name="spokes">Spoke Torque</string>
     <string name="chain">Chain Tension</string>
-    <string name="throttle_cable">Throttle Cable</string>
+    <string name="throttle_cable">Throttle/Clutch</string>
     <string name="brakes">Brakes</string>
+    <string name="fluids">Fluids</string>
+    <string name="chassis">Chassis Torques</string>
+    <string name="not_ready">Not Ready</string>
+    <string name="ready">Ready</string>
+
+
 </resources>

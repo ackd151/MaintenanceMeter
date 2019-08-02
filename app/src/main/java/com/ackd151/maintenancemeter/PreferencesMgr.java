@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -68,6 +69,20 @@ public class PreferencesMgr {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void saveProfile(Context context, int profileIndex, Machine profileToSave) {
+        SharedPreferences.Editor editor =
+                PreferenceManager.getDefaultSharedPreferences(context).edit();
+        editor.remove("profile_" + profileIndex);
+        editor.putString("profile_" + profileIndex, objectToString(profileToSave));
+        editor.commit();
+    }
+
+    public static Machine getProfile(Context context, int profileIndex) {
+        ArrayList<Machine> profiles = new ArrayList<>();
+        loadProfiles(profiles, context);
+        return profiles.get(profileIndex);
     }
 
 }

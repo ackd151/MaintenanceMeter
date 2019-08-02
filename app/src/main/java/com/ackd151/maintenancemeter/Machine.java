@@ -23,6 +23,7 @@ public class Machine implements Parcelable, Serializable {
         }
     };
 
+    // Class vars
     private Color primary, secondary, accent;
     private String profileName, year, make, model, imgFilename, iconFilename;
     private int oilFilterInterval, oilFilterLeft;
@@ -30,8 +31,10 @@ public class Machine implements Parcelable, Serializable {
             forkOilInterval, forkOilDoneAt, shockOilInterval, shockOilDoneAt,
             valvesInterval, valvesDoneAt;
     private float intakeLeftShim, intakeRightShim, exhaustLeftShim, exhaustRightShim;
+    private boolean preRideComplete, airFilterCB, spokesCB, chainCB, brakesCB, fluidsCB, throttleClutchCB,
+            chassisCB;
 
-    //Constructor
+    // Constructor
     public Machine(String year, String make, String model, float hours)  {
         profileName = year + " " + model;
         this.year = year;
@@ -40,15 +43,12 @@ public class Machine implements Parcelable, Serializable {
         currentHours = hours;
     }
 
-    public Machine(String profileName, String year, String make, String model, /*String imgFilename,
-                   String iconFilename, /*Color primary, Color secondary, Color accent,*/
+    public Machine(String profileName, String year, String make, String model,
                    float currentHours, String imgFilename, String iconFilename,
                    float engOilInterval, float engOilDoneAt, int oilFilterInterval,
                    int oilFilterLeft, float forkOilInterval, float forkOilDoneAt,
                    float shockOilInterval, float shockOilDoneAt, float topEndInterval,
-                   float topEndDoneAt, float valvesInterval, float valvesDoneAt
-                   /*, float intakeLeftAt, float intakeRightAt,
-                   float exhaustLeftAt, float exhaustRightAt*/)   {
+                   float topEndDoneAt, float valvesInterval, float valvesDoneAt)   {
         this.profileName = profileName;
         this.year = year;
         this.make = make;
@@ -56,9 +56,6 @@ public class Machine implements Parcelable, Serializable {
         this.currentHours = currentHours;
         this.imgFilename = imgFilename;
         this.iconFilename = iconFilename;
-//        this.primary = primary;
-//        this.secondary = secondary;
-//        this.accent = accent;
         this.engOilInterval = engOilInterval;
         this.engOilDoneAt = engOilDoneAt;
         this.oilFilterInterval = oilFilterInterval;
@@ -71,10 +68,6 @@ public class Machine implements Parcelable, Serializable {
         this.topEndDoneAt = topEndDoneAt;
         this.valvesInterval = valvesInterval;
         this.valvesDoneAt = valvesDoneAt;
-//        this.intakeLeftAt = intakeLeftAt;
-//        this.intakeRightAt = intakeRightAt;
-//        this.exhaustLeftAt = exhaustLeftAt;
-//        this.exhaustRightAt = exhaustRightAt;
     }
 
     void setprofileName(String profileName)   {   this.profileName = profileName;   }
@@ -111,6 +104,7 @@ public class Machine implements Parcelable, Serializable {
 
     Color getAccentColor() {   return accent;  }
 
+
     //Engine Oil
     void setEngOilInterval(float interval)  {  engOilInterval = interval;   }
 
@@ -135,6 +129,7 @@ public class Machine implements Parcelable, Serializable {
             --oilFilterLeft;
         }
     }
+
 
     //Oil Filter
     void resetOilFilterCount()  {
@@ -188,15 +183,9 @@ public class Machine implements Parcelable, Serializable {
         this.intakeRightShim = intakeRightShim;
         this.exhaustLeftShim = exhaustLeftShim;
         this.exhaustRightShim = exhaustRightShim;
-    }
 
-    void resetTopEnd(float hours, float intakeLeftShim, float intakeRightShim, float exhaustLeftShim,
-                     float exhaustRightShim) {
-        topEndDoneAt = hours;
-        this.intakeLeftShim = intakeLeftShim;
-        this.intakeRightShim = intakeRightShim;
-        this.exhaustLeftShim = exhaustLeftShim;
-        this.exhaustRightShim = exhaustRightShim;
+        // Also reset valve clearance check
+        resetValveClearance();
     }
 
     void resetTopEnd()  {   topEndDoneAt = currentHours;    }
@@ -236,14 +225,87 @@ public class Machine implements Parcelable, Serializable {
         this.exhaustRightShim = exhaustRightShim;
     }
 
-    void resetValveClearance(float hours, float intakeLeftShim, float intakeRightShim,
-                             float exhaustLeftShim, float exhaustRightShim)   {
-        valvesDoneAt = hours;
-        this.intakeLeftShim = intakeLeftShim;
-        this.intakeRightShim = intakeRightShim;
-        this.exhaustLeftShim = exhaustLeftShim;
-        this.exhaustRightShim = exhaustRightShim;
+    void resetValveClearance()   {
+        valvesDoneAt = currentHours;
     }
+
+
+    // Pre-ride
+    void resetPreRideUponPostRide() {
+        preRideComplete = false;
+        airFilterCB = false;
+        spokesCB = false;
+        chainCB = false;
+        brakesCB = false;
+        fluidsCB = false;
+        throttleClutchCB = false;
+        chassisCB = false;
+    }
+
+    void setPreRideComplete(boolean b) {
+        preRideComplete = b;
+    }
+
+    boolean getPreRideComplete() {
+        return preRideComplete;
+    }
+
+    void setAirFilterCB(boolean b) {
+        airFilterCB = b;
+    }
+
+    boolean getAirFilterCB() {
+        return airFilterCB;
+    }
+
+    void setSpokesCB(boolean b) {
+        spokesCB = b;
+    }
+
+    boolean getSpokesCB() {
+        return spokesCB;
+    }
+
+    void setChainCB(boolean b) {
+        chainCB = b;
+    }
+
+    boolean getChainCB() {
+        return chainCB;
+    }
+
+    void setBrakesCB(boolean b) {
+        brakesCB = b;
+    }
+
+    boolean getBrakesCB() {
+        return brakesCB;
+    }
+
+    void setFluidsCB(boolean b) {
+        fluidsCB = b;
+    }
+
+    boolean getFluidsCB() {
+        return fluidsCB;
+    }
+
+    void setThrottleClutchCB(boolean b) {
+        throttleClutchCB = b;
+    }
+
+    boolean getThrottleClutchCB() {
+        return throttleClutchCB;
+    }
+
+    void setChassisCB(boolean b) {
+        chassisCB = b;
+    }
+
+    boolean getChassisCB() {
+        return chassisCB;
+    }
+
 
     //Parcel Constructor
     public Machine(Parcel in)   {
