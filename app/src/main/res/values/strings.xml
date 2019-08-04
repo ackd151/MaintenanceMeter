@@ -49,6 +49,10 @@
     <string name="previous">last meas.</string>
     <string name="blank">----</string>
     <string name="go_to_button">Go To</string>
+    <string name="notes">Notes/Specs</string>
+    <string name="notes_hint_text">Record specs/capacities/notes here...</string>
+    <string name="save">save</string>
+
     <string-array name="empty_spinner">
         <item>---------</item>
     </string-array>

@@ -98,4 +98,11 @@ public class MachineHome extends AppCompatActivity {
 
         startActivity(maintenanceActivity);
     }
+
+    public void notes(View v) {
+        Intent notesActivity = new Intent(this, NotesSpecs.class);
+        notesActivity.putExtra("profileIndex", profileIndex);
+
+        startActivity(notesActivity);
+    }
 }

@@ -14,7 +14,7 @@ public class PreRide extends AppCompatActivity {
     Machine profile;
     String year, make, model;
     float hours;
-    CheckBox airFilterCB, spokesCB, chainCB, brakesCB, throttleCB, chassisCB;
+    CheckBox airFilterCB, spokesCB, chainCB, brakesCB, throttleCB, chassisCB,fluidsCB;
     TextView readyNotReady;
 
     @Override
@@ -29,6 +29,7 @@ public class PreRide extends AppCompatActivity {
         brakesCB = findViewById(R.id.checkBoxBrakes);
         throttleCB = findViewById(R.id.checkBoxThrottle);
         chassisCB = findViewById(R.id.checkBoxChassis);
+        fluidsCB = findViewById(R.id.checkBoxFluids);
 
         readyNotReady = findViewById(R.id.ready_not_ready);
 
@@ -65,12 +66,14 @@ public class PreRide extends AppCompatActivity {
         brakesCB.setChecked(profile.getBrakesCB());
         throttleCB.setChecked(profile.getThrottleClutchCB());
         chassisCB.setChecked(profile.getChassisCB());
+        fluidsCB.setChecked(profile.getFluidsCB());
         setReadyNotReady(profile.getPreRideComplete());
     }
 
     public void checkReady() {
         if (airFilterCB.isChecked() && spokesCB.isChecked() && chainCB.isChecked() &&
-                brakesCB.isChecked() && throttleCB.isChecked() && chassisCB.isChecked()) {
+                brakesCB.isChecked() && throttleCB.isChecked() && chassisCB.isChecked() &&
+                fluidsCB.isChecked()) {
             profile.setPreRideComplete(true);
             setReadyNotReady(true);
         } else {
@@ -113,6 +116,11 @@ public class PreRide extends AppCompatActivity {
     }
     public void checkChassisCB(View v) {
         profile.setChassisCB(chassisCB.isChecked());
+        checkReady();
+    }
+
+    public void checkFluidsCB(View v) {
+        profile.setFluidsCB(fluidsCB.isChecked());
         checkReady();
     }
 }
