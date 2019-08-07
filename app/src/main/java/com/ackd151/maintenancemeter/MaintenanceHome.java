@@ -78,8 +78,8 @@ public class MaintenanceHome extends AppCompatActivity {
 
         int oilFilterLeft = profile.getOilFilterLeft();
         TextView oilFilterDueIn = findViewById(R.id.filter_chgs_left_int);
-        oilFilterDueIn.setText(String.valueOf(oilFilterLeft));
-        oilFilterDueIn.setTextColor(oilFilterLeft > 0 ? Color.GREEN : Color.RED);
+        oilFilterDueIn.setText(oilFilterLeft == 1 ? "next" : String.valueOf(oilFilterLeft));
+        oilFilterDueIn.setTextColor(oilFilterLeft > 1 ? Color.GREEN : Color.RED);
 
         float forkOilDoneAt = profile.getForkOilDoneAt();
         float forkOilInterval = profile.getForkOilInterval();

@@ -110,6 +110,8 @@ public class Machine implements Parcelable, Serializable {
 
     float getEngOilInterval()   {   return engOilInterval;  }
 
+    void setEngOilDoneAt(float hours)   {   engOilDoneAt = hours;   }
+
     float getEngOilDoneAt()    {   return engOilDoneAt;  }
 
     void resetEngineOil(boolean filter)   {
@@ -142,6 +144,9 @@ public class Machine implements Parcelable, Serializable {
 
     void setOilFilterLeft(int oilChanges)   {   oilFilterLeft = oilChanges;    }
 
+    int getOilFilterInterval() { return oilFilterInterval; }
+
+    void setOilFilterInterval(int interval) { oilFilterInterval = interval; }
 
     //Forks
     void setForkOilInterval(float interval)  {   forkOilInterval = interval; }

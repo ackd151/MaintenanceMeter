@@ -52,6 +52,7 @@
     <string name="notes">Notes/Specs</string>
     <string name="notes_hint_text">Record specs/capacities/notes here...</string>
     <string name="save">save</string>
+    <string name="editProfileTitle">Edit Profile</string>
 
     <string-array name="empty_spinner">
         <item>---------</item>
@@ -129,5 +130,27 @@
     <string name="not_ready">Not Ready</string>
     <string name="ready">Ready</string>
 
+    <!-- Edit Profile Activity Strings-->
+    <string name="interval_heading">Change Maintenance Intervals</string>
+    <string name="oil_interval">Oil change interval (hrs)</string>
+    <string name="oil_filter_interval">Oil filter interval (#chgs)</string>
+    <string name="fork_interval">Fork oil interval (hrs)</string>
+    <string name="shock_interval">Shock oil interval (hrs)</string>
+    <string name="valves_interval">Valve clearance interval (hrs)</string>
+    <string name="top_end_interval">Top-end interval (hrs)</string>
+
+    <string name="maint_times_heading">Change Job Completion Times</string>
+    <string name="oil_done_at">Oil changed at (hrs)</string>
+    <string name="oil_filter_due_in">Oil filter due in (#chgs)</string>
+    <string name="forks_done_at">Fork oil changed at (hrs)</string>
+    <string name="shock_done_at">Shock oil changed at (hrs)</string>
+    <string name="valves_done_at">Valves done at (hrs)</string>
+    <string name="top_end_done_at">Top-end done at (hrs)</string>
+
+    <string name="valves_heading">Record Valve Clearances</string>
+    <string name="left_exhaust_gap">Left exhaust gap</string>
+    <string name="right_exhaust_gap">Right exhaust gap</string>
+    <string name="left_intake_gap">Left intake gap</string>
+    <string name="right_intake_gap">Right intake gap</string>
 
 </resources>

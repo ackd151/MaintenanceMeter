@@ -105,4 +105,11 @@ public class MachineHome extends AppCompatActivity {
 
         startActivity(notesActivity);
     }
+
+    public void editProfile(View v) {
+        Intent editProfileActivity = new Intent(this, EditProfile.class);
+        editProfileActivity.putExtra("profileIndex", profileIndex);
+
+        startActivity(editProfileActivity);
+    }
 }
