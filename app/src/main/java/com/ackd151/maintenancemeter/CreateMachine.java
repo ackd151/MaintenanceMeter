@@ -19,20 +19,20 @@ public class CreateMachine extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_machine);
 
-        spinnerYear = (Spinner)findViewById(R.id.spinner_year);
+        spinnerYear = findViewById(R.id.spinner_year);
         ArrayAdapter<CharSequence> adapterYear = ArrayAdapter.createFromResource(this,
                 R.array.manufactured_year, android.R.layout.simple_spinner_item);
         adapterYear.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerYear.setAdapter(adapterYear);
 
-        spinnerMake = (Spinner)findViewById(R.id.spinner_make);
+        spinnerMake = findViewById(R.id.spinner_make);
         ArrayAdapter<CharSequence> adapterMake = ArrayAdapter.createFromResource(this,
                 R.array.manufacturer_list, android.R.layout.simple_spinner_item);
         adapterMake.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerMake.setAdapter(adapterMake);
         spinnerMake.setOnItemSelectedListener(this);
 
-        spinnerModel = (Spinner)findViewById(R.id.spinner_model);
+        spinnerModel = findViewById(R.id.spinner_model);
         ArrayAdapter<CharSequence> adapterModel = ArrayAdapter.createFromResource(this,
                 R.array.empty_spinner, android.R.layout.simple_spinner_item);
         adapterModel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -114,17 +114,17 @@ public class CreateMachine extends AppCompatActivity implements AdapterView.OnIt
         }
         String bikeImgFilename = make + tempModel + tempYear;
         bikeImgFilename = bikeImgFilename.toLowerCase().replaceAll("[ -]", "_");
-        EditText engOil = (EditText) findViewById(R.id.eng_oil_number);
+        EditText engOil =  findViewById(R.id.eng_oil_number);
         float engOilInterval = Float.valueOf(engOil.getText().toString());
-        EditText oilFilter = (EditText) findViewById(R.id.oil_filter_number);
+        EditText oilFilter =  findViewById(R.id.oil_filter_number);
         int oilFilterChgAt = Integer.valueOf(oilFilter.getText().toString());
-        EditText forkOil = (EditText) findViewById(R.id.fork_oil_number);
+        EditText forkOil =  findViewById(R.id.fork_oil_number);
         float forkOilInterval = Float.valueOf(forkOil.getText().toString());
-        EditText shockOil = (EditText) findViewById(R.id.shock_oil_number);
+        EditText shockOil =  findViewById(R.id.shock_oil_number);
         float shockOilInterval = Float.valueOf(shockOil.getText().toString());
-        EditText valve = (EditText) findViewById(R.id.valve_number);
+        EditText valve =  findViewById(R.id.valve_number);
         float valveInterval = Float.valueOf(valve.getText().toString());
-        EditText topEnd = (EditText) findViewById(R.id.top_end_number);
+        EditText topEnd =  findViewById(R.id.top_end_number);
         float topEndInterval = Float.valueOf(topEnd.getText().toString());
 
         Intent resultIntent = new Intent(this, MainActivity.class);
@@ -132,6 +132,11 @@ public class CreateMachine extends AppCompatActivity implements AdapterView.OnIt
                 bikeImgFilename, engOilInterval, currentHours, oilFilterChgAt, oilFilterChgAt,
                 forkOilInterval, currentHours, shockOilInterval, currentHours, topEndInterval,
                 currentHours, valveInterval, currentHours);
+
+
+        // Change to standard activity launch w/ index and save via static prefMgr. Get rid of parcelable...
+
+        
         resultIntent.putExtra("new_profile", (Parcelable) newProfile);
         setResult(RESULT_OK, resultIntent);
         finish();

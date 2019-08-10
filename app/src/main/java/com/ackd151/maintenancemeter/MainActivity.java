@@ -1,30 +1,17 @@
 package com.ackd151.maintenancemeter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Parcelable;
-import android.preference.PreferenceManager;
 import android.app.DialogFragment;
-import android.support.constraint.solver.ArrayLinkedVariables;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.List;
 
-import static android.view.View.GONE;
 
 public class MainActivity extends AppCompatActivity implements DeleteDialogFragment.DeleteDialogListener    {
 
@@ -56,15 +43,6 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
                 Bundle bundle = data.getExtras();
                 Machine newProfile = bundle.getParcelable("new_profile");
                 profiles.add(newProfile);
-                PreferencesMgr.saveProfiles(profiles, this);
-            }
-        }
-
-        if (requestCode == 2) {
-            if (resultCode == Activity.RESULT_OK){
-                Machine profile = data.getParcelableExtra("returningProfile");
-                int profileIndex = data.getIntExtra("profileIndex", -1);
-                profiles.set(profileIndex, profile);
                 PreferencesMgr.saveProfiles(profiles, this);
             }
         }
@@ -135,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
     public void machineHome(View view, int profileIndex)  {
         Intent launchMachineHome = new Intent(this, MachineHome.class);
         launchMachineHome.putExtra("profileIndex", profileIndex);
-        startActivityForResult(launchMachineHome, 2);
+        startActivity(launchMachineHome);
     }
 
     public void deleteProfile(View view) {
@@ -145,11 +123,11 @@ public class MainActivity extends AppCompatActivity implements DeleteDialogFragm
 
     @Override
     public void onDialogPositiveClick(android.app.DialogFragment dialog) {
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 //        editor.remove(PRIMARY_PROFILE);
-//        editor.remove(PRIMARY_PROFILE_IMAGE);
-//        editor.apply();
+        editor.remove(PRIMARY_PROFILE_IMAGE);
+        editor.apply();
 //        profilePresent(false);
     }
 

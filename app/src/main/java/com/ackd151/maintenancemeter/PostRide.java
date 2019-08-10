@@ -35,23 +35,6 @@ public class PostRide extends AppCompatActivity {
         screenBuilder();
     }
 
-    public void updateCurrHours(View view)   {
-        EditText rideDuration = findViewById(R.id.durationFloat);
-        profile.setCurrentHours(profile.getCurrentHours() +
-                Float.valueOf(rideDuration.getText().toString()));
-
-        // Reset pre-ride checklist
-        profile.resetPreRideUponPostRide();
-
-        // Save updated profile to preferences
-        PreferencesMgr.saveProfile(this, profileIndex, profile);
-
-        // Return result
-        Intent returnIntent = new Intent();
-        setResult(Activity.RESULT_OK,returnIntent);
-        finish();
-    }
-
     public void updateHourMeter(View view)  {
         EditText hourMeter = findViewById(R.id.hour_meter_float);
         Intent returnIntent = new Intent();

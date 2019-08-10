@@ -27,6 +27,7 @@
     <string name="top_end">Top-end at:</string>
     <string name="top_end_task">Top-End</string>
     <string name="hrs">hrs</string>
+    <string name="hrs_period">hrs.</string>
     <string name="chgs">chg(s)</string>
     <string name="maint_home_title">Overview</string>
     <string name="eng_oil_task">Engine oil</string>
@@ -37,7 +38,7 @@
     <string name="inspect_task_label">Sign Off</string>
     <string name="post_ride">Enter ride duration</string>
     <string name="or">-OR-</string>
-    <string name="hour_meter_reading">...the new hour meter reading</string>
+    <string name="hour_meter_reading">New Hour-meter Reading</string>
     <string name="hour_meter">Hour-meter:</string>
     <string name="update">Update</string>
     <string name="valve_clearance_title">Valve Clearance Check</string>
